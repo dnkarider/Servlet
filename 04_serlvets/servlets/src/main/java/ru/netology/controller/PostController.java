@@ -42,10 +42,10 @@ public class PostController {
 
     public void removeById(long id, HttpServletResponse response) throws IOException {//somewhy doesnt work
         // TODO: deserialize request & serialize response
-//        response.setContentType(APPLICATION_JSON);
-//        service.removeById(id);
-//        final var gson = new Gson();
-//        final var data = service.all();
-//        response.getWriter().print(gson.toJson(data));
+        response.setContentType(APPLICATION_JSON);
+        final var gson = new Gson();
+        service.removeById(id);
+        final var data = service.all();
+        response.getWriter().print(gson.toJson(data));
     }
 }
