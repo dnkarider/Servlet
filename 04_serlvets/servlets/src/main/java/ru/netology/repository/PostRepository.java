@@ -49,6 +49,11 @@ public class PostRepository {
                 }
             }
         } else if(post.getId() > idTracker && post.getId() != 0){
+            if(!emptyIds.isEmpty()){
+                posts.add(post);
+                post.setId(emptyIds.remove(0));
+                return post;
+            }
             posts.add(post);
             post.setId(idTracker + 1);
             idTracker++;
