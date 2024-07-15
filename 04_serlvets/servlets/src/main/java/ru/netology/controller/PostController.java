@@ -30,7 +30,7 @@ public class PostController {
         final var gson = new Gson();
         response.getWriter().print(gson.toJson(data));
     }
-
+//
     public void save(Reader body, HttpServletResponse response) throws IOException {
         response.setContentType(APPLICATION_JSON);
         final var gson = new Gson();
@@ -39,7 +39,7 @@ public class PostController {
         final var data = service.all();
         response.getWriter().print(gson.toJson(data));
     }
-
+//
     public void removeById(long id, HttpServletResponse response) throws IOException {//somewhy doesnt work
         // TODO: deserialize request & serialize response
         response.setContentType(APPLICATION_JSON);
